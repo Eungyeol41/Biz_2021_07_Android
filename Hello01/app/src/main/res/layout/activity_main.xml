@@ -10,28 +10,27 @@
         android:id="@+id/txt_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I'm hungry"
-        android:textSize="20dp"
+        android:text="SUCCESS"
+        android:textSize="25dp"
         android:padding="16px"
-        android:background="#00FFEE"
+        android:textColor="#009688"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/txt_02"
         />
 
-
     <TextView
         android:id="@+id/txt_02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="배고팤"
+        android:text="Sleepy"
         android:textSize="20sp"
-        android:textColor="#AD23C5"
+        android:textColor="#00BCD4"
         app:layout_constraintTop_toTopOf="@id/txt_01"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/edit_01"
         />
 
     <EditText
@@ -39,7 +38,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="100dp"
+        android:hint="전화번호를 입력해주세요"
+        android:textAlignment="center"
         app:layout_constraintTop_toTopOf="@id/txt_02"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/btn_phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_01"
+        />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/btn_phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_01"
+        />
+
+    <Button
+        android:id="@+id/btn_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tel"
+        app:layout_constraintRight_toRightOf="@id/btn_login"
+        app:layout_constraintLeft_toLeftOf="@id/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_01"
+    />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
