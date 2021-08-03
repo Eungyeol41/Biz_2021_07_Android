@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "703869847197",
+    "project_id": "hello-android-82c13",
+    "storage_bucket": "hello-android-82c13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703869847197:android:18931e05bda233f000f674",
+        "android_client_info": {
+          "package_name": "com.ini.chatt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703869847197-edm5r962sdnnp53atrelbt4adpur0u97.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_D-wryRKtCyDeP5cyeZWub6Q3zjmKytY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703869847197-edm5r962sdnnp53atrelbt4adpur0u97.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
