@@ -1,7 +1,6 @@
-package com.ini.chatt.model;
+package com.callor.cacao.model;
 
 public class Chatt {
-
     private String name;
     private String msg;
 
