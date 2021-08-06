@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cacao">
+        <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_settings" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"

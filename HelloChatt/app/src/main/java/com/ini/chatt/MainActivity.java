@@ -75,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
         txt_msg = findViewById(R.id.txt_msg);
         btn_send = findViewById(R.id.btn_send);
 
-
-
         // 테스트를 위한 가상의 데이터
         /*
         Chatt chatt = new Chatt();
