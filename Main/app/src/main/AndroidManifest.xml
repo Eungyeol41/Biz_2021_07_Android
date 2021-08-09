@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Main">
         <activity
-            android:name=".MainActivity2"
-            android:exported="true"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Main.NoActionBar" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

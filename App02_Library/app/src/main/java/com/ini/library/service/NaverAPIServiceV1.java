@@ -3,8 +3,17 @@ package com.ini.library.service;
 // Ctrl + Alt + O : import 정리
 import android.util.Log;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ini.library.FirstFragment;
+import com.ini.library.adapter.BookAdapter;
 import com.ini.library.config.Naver;
+import com.ini.library.databinding.FragmentFirstBinding;
+import com.ini.library.model.BookDTO;
 import com.ini.library.model.NaverParent;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -12,7 +21,13 @@ import retrofit2.Response;
 
 public class NaverAPIServiceV1 {
 
-    private String search;
+    private BookAdapter bookAdapter = null;
+    FragmentFirstBinding binding = null;
+
+    public NaverAPIServiceV1(BookAdapter bookAdapter, FragmentFirstBinding binding) {
+        this.bookAdapter = bookAdapter;
+        this.binding = binding;
+    }
 
     // 3. 생성된 Connection을 통하여 데이터를 가져오고 필요한 데이터를 Parsing하여 books 객체에 담기
     public void getNaverBooks(String search) {
@@ -36,9 +51,9 @@ public class NaverAPIServiceV1 {
         // Retrofit event 핸들러 작성
         naverCall.enqueue(new Callback<NaverParent>() {
 
-            NaverParent naverParent = null;
+            private NaverParent naverParent;
 
-            @Override
+           @Override
             public void onResponse(Call<NaverParent> call, Response<NaverParent> response) {
                 // return된 response 객체에서 데이터만 추출
                 Log.d("Naver Res Return", response.toString());
@@ -46,6 +61,15 @@ public class NaverAPIServiceV1 {
                 if(resCode < 300) {
                     naverParent = response.body();
                     Log.d("Naver Return", naverParent.toString());
+
+                    List<BookDTO> bookDTOList = naverParent.items;
+                    bookAdapter = new BookAdapter(bookDTOList);
+                    binding.bookListView.setAdapter(bookAdapter);
+
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(binding.getRoot().getContext());
+                    binding.bookListView.setLayoutManager(layoutManager);
+
                 }
             }
 
