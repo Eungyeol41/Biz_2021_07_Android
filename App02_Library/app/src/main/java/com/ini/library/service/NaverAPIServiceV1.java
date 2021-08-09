@@ -35,7 +35,7 @@ public class NaverAPIServiceV1 {
         // 아래의 코드를 실행하면 Retrofit 설정된 값을 기준으로 naver에 요청을 수행한다.
         // 이 때 이 코드는 비동기 방식으로 작동된다.
         Call<NaverParent> naverCall = RetrofitClient.getClient()
-                .getNaverBook(Naver.CLIENT_ID, Naver.CLIENT_SECRET, search, 10, 1);
+                .getNaverBook(Naver.CLIENT_ID, Naver.CLIENT_SECRET, search, 50, 1);
 
         /*
             Retrofit은 API 요청을 비동기 방식으로 수행을 한다
