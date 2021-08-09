@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,10 +28,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="-125dp"
             android:layout_marginRight="-125dp"
-            android:background="@drawable/transparent_circle">
-
-
-        </View>
+            android:background="@drawable/transparent_circle" />
 
 
         <View
@@ -44,23 +41,23 @@
             android:background="@drawable/transparent_circle" />
 
         <View
-            android:layout_width="500dp"
-            android:layout_height="500dp"
+            android:layout_width="450dp"
+            android:layout_height="450dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="-250dp"
-            android:layout_marginRight="-250dp"
+            android:layout_marginTop="-225dp"
+            android:layout_marginRight="-225dp"
             android:background="@drawable/transparent_circle" />
 
         <View
-            android:layout_width="700dp"
-            android:layout_height="700dp"
+            android:layout_width="550dp"
+            android:layout_height="550dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="-350dp"
-            android:layout_marginRight="-350dp"
+            android:layout_marginTop="-275dp"
+            android:layout_marginRight="-275dp"
             android:background="@drawable/transparent_circle" />
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
