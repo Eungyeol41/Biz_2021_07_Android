@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.book_list_view);
 //        recyclerView.setOnClickListener(view-> {
 
-            NaverBookService naverBookService = new NaverBookServiceImplV1();
+            NaverBookService naverBookService = new NaverBookServiceImplV1(recyclerView);
             naverBookService.getBooks("자바");
 
 //        });

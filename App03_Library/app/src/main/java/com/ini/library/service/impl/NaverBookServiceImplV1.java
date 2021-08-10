@@ -2,11 +2,17 @@ package com.ini.library.service.impl;
 
 import android.util.Log;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ini.library.adapter.BookViewAdapter;
 import com.ini.library.config.NaverAPI;
 import com.ini.library.model.NaverBookDTO;
 import com.ini.library.model.NaverParent;
 import com.ini.library.service.NaverBookService;
 import com.ini.library.service.RetrofitAPIClient;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -14,6 +20,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class NaverBookServiceImplV1 implements NaverBookService {
+
+    protected RecyclerView recyclerView;
+    public NaverBookServiceImplV1(RecyclerView recyclerView) {
+        this.recyclerView = recyclerView;
+    }
 
     @Override
     public NaverBookDTO getBooks(String search) {
@@ -55,6 +66,23 @@ public class NaverBookServiceImplV1 implements NaverBookService {
                 // 300 미만은 정상적인 코드임
                 if (resCode < 300) {
                     Log.d("Naver 응답 데이터", response.body().toString());
+
+                    // Naver에서 수신한 전체 데이터
+                    NaverParent naverParent = response.body();
+                    // Naver에서 수신한 전체 데이터 내에서 도서 List 정보만 추출하기
+                    List<NaverBookDTO> bookList = naverParent.items;
+
+                    // 도서 List를 사용하여 RecyclerView에 데이터를 표현하기 위한 Adapter 생성하기
+                    BookViewAdapter bookViewAdapter = new BookViewAdapter(bookList);
+
+                    // recyclerView에 Adapter와 Manager 만들기 --> 데이터가 보여진다..?
+                    // MainActivity에서 전달받은 recyclerView에 Adapter를 setting
+                    recyclerView.setAdapter(bookViewAdapter);
+
+                    // 화면에 데이터들을 표현하는 데 리스트를 관리할 Layout Manager 설정하기
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(recyclerView.getContext());
+                    recyclerView.setLayoutManager(layoutManager);
+
                 } else {
                     Log.d("Error!!!!", response.toString());
                 }
@@ -65,7 +93,9 @@ public class NaverBookServiceImplV1 implements NaverBookService {
             public void onFailure(Call<NaverParent> call, Throwable t) {
 
             }
+
         });
+
         return null;
     }
 
