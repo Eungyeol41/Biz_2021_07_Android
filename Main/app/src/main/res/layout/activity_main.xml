@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <RelativeLayout
-=======
-<androidx.constraintlayout.widget.ConstraintLayout
->>>>>>> 67e28aaf3d72ff88f2bab8ba7be6d082a70047e8
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,22 +8,6 @@
     android:background="#F0000000"
     tools:context=".MainActivity"
     >
-
-<<<<<<< HEAD
-    <View
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-
-        android:layout_marginTop="-60dp"
-        android:layout_marginRight="-60dp"
-        android:background="@drawable/circle" />
-=======
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#000000">
 
         <View
             android:layout_width="150dp"
@@ -45,41 +25,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="-125dp"
             android:layout_marginRight="-125dp"
-            android:background="@drawable/transparent_circle">
-
-
-        </View>
-
-
-        <View
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="-175dp"
-            android:layout_marginRight="-175dp"
             android:background="@drawable/transparent_circle" />
 
-        <View
-            android:layout_width="500dp"
-            android:layout_height="500dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="-250dp"
-            android:layout_marginRight="-250dp"
-            android:background="@drawable/transparent_circle" />
-
-        <View
-            android:layout_width="700dp"
-            android:layout_height="700dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="-350dp"
-            android:layout_marginRight="-350dp"
-            android:background="@drawable/transparent_circle" />
-
-    </RelativeLayout>
->>>>>>> 67e28aaf3d72ff88f2bab8ba7be6d082a70047e8
 
     <View
         android:layout_width="20dp"
