@@ -19,7 +19,7 @@ public class BookDTO {
     private String author;      // string	저자 정보
     private String price;       // integer	정가 정보
     private String discount;    // integer	할인 가격 정보
-    private String publisherv;  // string	출판사 정보
+    private String publisher;   // string	출판사 정보
     private String isbn;        // integer	ISBN
     private String description; // string	검색 결과 문서의 내용을 요약한 패시지 정보
     private String pubdate;     // datetime	출간일 정보
