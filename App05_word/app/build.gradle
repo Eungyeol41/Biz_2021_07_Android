@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.ini.myword"
+        minSdk 25
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 30
+        minSdkVersion 25
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+
+    // room-*, lifecycle-* dependency는 각각 같은 버전을 유지해야 한다
+    // 이럴 때는 공통 properties를 선언하고 사용하여 버전을 일치시키는 것이 좋다
+    // 공통 property는 project gradle에 ext {} tag 속성으로 선언할 수 있다
+
+    // runtime ( 2개 )
+    // 원래는 runtime만 가져오면 되는 compiler의 annotation을 사용하기 위해서..?
+    // 아래의 room-compiler의 annotationProcessor만 사용한다.
+    // https://mvnrepository.com/artifact/androidx.room/room-runtime
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    // https://mvnrepository.com/artifact/androidx.room/room-compiler
+    // implementation 'androidx.room:room-compiler:2.3.0'
+    annotationProcessor("androidx.room:room-compiler:$rootProject.roomVersion")
+
+
+    // lombok ( 1개 )
+    // compileOnly : 업로드 되지 않음
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor('org.projectlombok:lombok:1.18.20')
+
+
+    // lifecycle 관련 ( 4개 )
+    // runtimeOnly -> implementation ( why.. ? )-> 기기가 최신 버전일 경우에는 이미 내장되어있어서 굳이 설치, 업로드를 할 필요가 없지만 예전 기기의 경우는 다르기에 implementation 사용..
+    // runtimeOnly : 따로 배포하지 않고 기기에 내장되어있는 것 가져다 써라!
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-runtime
+    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.lifecycleVersion"
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$rootProject.lifecycleVersion"
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata
+    implementation "androidx.lifecycle:lifecycle-livedata:$rootProject.lifecycleVersion"
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-common
+    implementation "androidx.lifecycle:lifecycle-common:$rootProject.lifecycleVersion"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
