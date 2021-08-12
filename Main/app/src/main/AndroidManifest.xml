@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Main">
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/animation" />
+            android:resource="@anim/scale" />
 
         <activity
             android:name=".MainActivity"

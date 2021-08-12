@@ -132,4 +132,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <View
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="397dp"
+        android:layout_marginRight="384dp"
+        android:background="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/white"/>
+
+    <View
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="297dp"
+        android:layout_marginRight="34dp"
+        android:background="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/white"/>
+
+    <View
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="544dp"
+        android:layout_marginRight="127dp"
+        android:background="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/white"/>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginRight="327dp"
+        android:background="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/white"/>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="644dp"
+        android:layout_marginRight="327dp"
+        android:background="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/white"/>
+
 </RelativeLayout>
