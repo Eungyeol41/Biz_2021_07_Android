@@ -69,6 +69,7 @@
         android:backgroundTint="@color/white" />
 
     <View
+        android:id="@+id/mini_circle_yellow"
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:layout_alignParentTop="true"
@@ -129,10 +130,7 @@
         android:backgroundTint="#C8FFFFFF" />
 
     <View
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <View
+        android:id="@+id/plus5"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentTop="true"
@@ -140,9 +138,10 @@
         android:layout_marginTop="397dp"
         android:layout_marginRight="384dp"
         android:background="@drawable/ic_baseline_add_24"
-        android:backgroundTint="@color/white"/>
+        android:backgroundTint="@color/white" />
 
     <View
+        android:id="@+id/plus4"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentTop="true"
@@ -153,6 +152,7 @@
         android:backgroundTint="@color/white"/>
 
     <View
+        android:id="@+id/plus3"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentTop="true"
@@ -160,9 +160,10 @@
         android:layout_marginTop="544dp"
         android:layout_marginRight="127dp"
         android:background="@drawable/ic_baseline_add_24"
-        android:backgroundTint="@color/white"/>
+        android:backgroundTint="@color/white" />
 
     <View
+        android:id="@+id/plus2"
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:layout_alignParentTop="true"
@@ -173,6 +174,7 @@
         android:backgroundTint="@color/white"/>
 
     <View
+        android:id="@+id/plus1"
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:layout_alignParentTop="true"
@@ -180,6 +182,6 @@
         android:layout_marginTop="644dp"
         android:layout_marginRight="327dp"
         android:background="@drawable/ic_baseline_add_24"
-        android:backgroundTint="@color/white"/>
+        android:backgroundTint="@color/white" />
 
 </RelativeLayout>
