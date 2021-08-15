@@ -22,7 +22,19 @@ public interface NaverRetrofit {
     public Call<NaverParent> getGenre(
             @Header("X-Naver-Client-Id") String clientId,
             @Header("X-Naver-Client-Secret") String clientSecret,
-            @Query("genre") String genre
+            @Query("query") String query,
+            @Query("genre") String genre,
+            @Query("start") int start,
+            @Query("display") int display
+    );
+
+    public Call<NaverParent> getCountry(
+            @Header("X-Naver-Client-Id") String clientId,
+            @Header("X-Naver-Client-Secret") String clientSecret,
+            @Query("query") String query,
+            @Query("country") String country,
+            @Query("start") int start,
+            @Query("display") int display
     );
 
 }

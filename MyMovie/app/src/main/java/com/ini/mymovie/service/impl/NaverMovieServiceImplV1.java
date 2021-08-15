@@ -61,7 +61,7 @@ public class NaverMovieServiceImplV1 implements NaverMovieService {
 
     }
 
-//    public void getGenre(String )
+//    public void getGenre(String genre)
 
 
 

@@ -1,26 +1,17 @@
 package com.ini.mymovie.adapter;
 
-import android.graphics.Movie;
 import android.text.Html;
-import android.text.Layout;
 import android.text.Spanned;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ini.mymovie.MainActivity;
-import com.ini.mymovie.R;
 import com.ini.mymovie.databinding.MovieItemViewBinding;
+
 import com.ini.mymovie.model.NaverMovieDTO;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -53,6 +44,7 @@ public class NaverMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         Spanned movie_title = Html.fromHtml(movieDTO.getTitle(), Html.FROM_HTML_MODE_LEGACY);
         movieBinding.movieItemTitle.setText(movie_title);
+
 
         Spanned movie_subtitle = Html.fromHtml(movieDTO.getSubtitle(), Html.FROM_HTML_MODE_LEGACY);
         movieBinding.movieItemSubtitle.setText(movie_subtitle);
