@@ -4,4 +4,6 @@ import com.ini.mymovie.model.NaverMovieDTO;
 
 public interface NaverMovieService {
     public void getMovies(String search);
+    public void getGenre(String search);
+    public void getCountry(String search);
 }

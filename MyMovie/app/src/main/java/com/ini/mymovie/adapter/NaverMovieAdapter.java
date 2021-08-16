@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ini.mymovie.databinding.MovieItemViewBinding;
 
+import com.ini.mymovie.databinding.MovieItemViewBinding;
 import com.ini.mymovie.model.NaverMovieDTO;
 import com.squareup.picasso.Picasso;
 
@@ -45,7 +45,6 @@ public class NaverMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         Spanned movie_title = Html.fromHtml(movieDTO.getTitle(), Html.FROM_HTML_MODE_LEGACY);
         movieBinding.movieItemTitle.setText(movie_title);
 
-
         Spanned movie_subtitle = Html.fromHtml(movieDTO.getSubtitle(), Html.FROM_HTML_MODE_LEGACY);
         movieBinding.movieItemSubtitle.setText(movie_subtitle);
 
@@ -58,8 +57,9 @@ public class NaverMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         Spanned movie_actor = Html.fromHtml(movieDTO.getActor(), Html.FROM_HTML_MODE_LEGACY);
         movieBinding.movieItemActor.setText(movie_actor);
 
-        Spanned movie_userRating = Html.fromHtml(movieDTO.getUserRating(), Html.FROM_HTML_MODE_LEGACY);
+        Spanned movie_userRating = Html.fromHtml(String.valueOf(movieDTO.getUserRating()), Html.FROM_HTML_MODE_LEGACY);
         movieBinding.movieItemUserRating.setText(movie_userRating);
+        movieBinding.ratingBar.setRating(movieDTO.getUserRating()/2);
 
         if (!movieDTO.getImage().isEmpty()) {
             Picasso.get().load(movieDTO.getImage()).into(movieBinding.movieItemImage);

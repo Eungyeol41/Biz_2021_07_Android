@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(main_binding.getRoot());
 
         NaverMovieService movieService = new NaverMovieServiceImplV1(main_binding.movieListView);
-        movieService.getMovies("모가디슈");
+        movieService.getMovies("스텝 업");
 
     }
 
