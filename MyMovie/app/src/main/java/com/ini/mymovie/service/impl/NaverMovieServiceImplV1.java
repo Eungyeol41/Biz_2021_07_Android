@@ -61,41 +61,5 @@ public class NaverMovieServiceImplV1 implements NaverMovieService {
 
     }
 
-    @Override
-    public void getGenre(String search) {
-        Call<NaverParent> movieGenre = NaverRetrofitClient.getApiClient().getGenre(NaverAPI.CLIENT_ID, NaverAPI.CLIENT_SECRET, search, "1:드라마", 1, 15);
-        movieGenre.enqueue(new Callback<NaverParent>() {
-            @Override
-            public void onResponse(Call<NaverParent> call, Response<NaverParent> response) {
-
-                int resCode = response.code();
-                if (resCode < 300) {
-                    Log.d("네이버 영화는 어떤 게 있을까?", response.body().toString());
-
-                    List<NaverMovieDTO> movieList = response.body().items;
-                    NaverMovieAdapter movieAdapter = new NaverMovieAdapter(movieList);
-
-                    recyclerView.setAdapter(movieAdapter);
-
-                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(recyclerView.getContext());
-                    recyclerView.setLayoutManager(layoutManager);
-
-                } else {
-                    Log.d("Error 발생!!!", response.toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<NaverParent> call, Throwable t) {
-
-            }
-        });
-    }
-
-    @Override
-    public void getCountry(String search) {
-
-    }
-
 
 }
