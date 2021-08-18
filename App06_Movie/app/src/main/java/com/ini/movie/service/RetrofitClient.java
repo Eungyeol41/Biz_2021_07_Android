@@ -1,6 +1,5 @@
 package com.ini.movie.service;
 
-import com.ini.movie.NaverRetrofit;
 import com.ini.movie.config.NaverAPI;
 
 import retrofit2.Retrofit;

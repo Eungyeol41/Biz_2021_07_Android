@@ -1,4 +1,4 @@
-package com.ini.movie;
+package com.ini.movie.service;
 
 import com.ini.movie.model.NaverParent;
 
@@ -11,7 +11,7 @@ import retrofit2.http.Query;
  */
 public interface NaverRetrofit {
 
-    public Call<NaverParent> getMovie(
+    public Call<NaverParent> getMovies(
             @Header("X-Naver-Client-Id") String clientId,
             @Header("X-Naver-Client-Secret") String clientSecret,
             @Query("query") String query,
