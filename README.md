@@ -7,5 +7,3 @@
 #### ※ lombok을 사용할 경우에는  
 1. build.gradle (:app) 부분에 Maven에서 가져온 gradle:short 부분과 더불어 annotation을 붙여줘야 하고!!  
 2. 잊지않고 plug in 설치를 해주자... 
-
-깃
