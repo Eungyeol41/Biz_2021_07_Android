@@ -31,11 +31,11 @@ class CurvedBottomNavigationView : BottomNavigationView {
         mPaint = Paint()
         mPaint.setStyle(Paint.Style.FILL_AND_STROKE)
         mPaint.setColor(Color.WHITE)
-        setBackgroundColor(Color.TRANSPARENT)
+        setBackgroundColor(Color.rgb(86, 144, 255))
     }
 
 
-    private val CURVE_CIRCLE_RADIUS = 190 / 2
+    private val CURVE_CIRCLE_RADIUS = 108
 
     private val mFirstCurveStartPoint = Point()
     private val mFirstCurveEndPoint = Point()
@@ -56,32 +56,47 @@ class CurvedBottomNavigationView : BottomNavigationView {
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
-        mNavigationBarWidth = width
-        mNavigationBarHeight = height
+        mNavigationBarWidth = width // 1080
+        mNavigationBarHeight = height // 154
 
-        mFirstCurveStartPoint.set(mNavigationBarWidth / 2 - CURVE_CIRCLE_RADIUS * 2 - CURVE_CIRCLE_RADIUS / 3, 0)
-        mFirstCurveEndPoint.set(mNavigationBarWidth / 2, CURVE_CIRCLE_RADIUS + CURVE_CIRCLE_RADIUS / 4)
+        // 360, 154
+        mFirstCurveStartPoint.set(mNavigationBarWidth / 3, mNavigationBarHeight)
+        // 0, 77
+        mFirstCurveEndPoint.set(0, mNavigationBarHeight / 2)
+        /*
         mSecondCurveStartPoint = mFirstCurveEndPoint
-        mSecondCurveEndPoint.set(mNavigationBarWidth / 2 + CURVE_CIRCLE_RADIUS * 2 + CURVE_CIRCLE_RADIUS / 3, 0)
+        mSecondCurveEndPoint.set(mNavigationBarWidth / 10, 0)
+        */
 
         mFirstCurveControlPoint1.set(
-            mFirstCurveStartPoint.x + CURVE_CIRCLE_RADIUS + CURVE_CIRCLE_RADIUS / 4,
+            60, 115
+            /*
+            // 360 -
+            mFirstCurveStartPoint.x - CURVE_CIRCLE_RADIUS / 9,
+            // 77
             mFirstCurveStartPoint.y
+            */
         )
 
         mFirstCurveControlPoint2.set(
-            mFirstCurveEndPoint.x - CURVE_CIRCLE_RADIUS * 2 + CURVE_CIRCLE_RADIUS,
+
+            111, 111
+            /*
+            mFirstCurveStartPoint.x - CURVE_CIRCLE_RADIUS / 3,
             mFirstCurveEndPoint.y
+            */
         )
 
+        /*
         mSecondCurveControlPoint1.set(
-            mSecondCurveStartPoint.x + CURVE_CIRCLE_RADIUS * 2 - CURVE_CIRCLE_RADIUS,
+            mSecondCurveStartPoint.x + CURVE_CIRCLE_RADIUS / 3,
             mSecondCurveStartPoint.y
         )
         mSecondCurveControlPoint2.set(
-            mSecondCurveEndPoint.x - (CURVE_CIRCLE_RADIUS + CURVE_CIRCLE_RADIUS / 4),
+            mSecondCurveStartPoint.x + CURVE_CIRCLE_RADIUS / 9,
             mSecondCurveEndPoint.y
         )
+        */
 
         mPath.reset()
         mPath.moveTo(0F, 0F)
