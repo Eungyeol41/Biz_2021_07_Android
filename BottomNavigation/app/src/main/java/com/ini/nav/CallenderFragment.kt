@@ -5,6 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import java.util.*
+import android.R
+import com.ini.nav.databinding.FragmentCallenderBinding
+import com.ini.nav.databinding.FragmentHomeBinding
+
+import devs.mulham.horizontalcalendar.HorizontalCalendar
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +30,9 @@ class CallenderFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding:FragmentCallenderBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,7 +46,14 @@ class CallenderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_callender, container, false)
+//        return inflater.inflate(R.layout.fragment_callender, container, false)
+        _binding = FragmentCallenderBinding.inflate(inflater, container, false)
+
+        val root: View = binding.root
+
+        // createCallendar(binding)
+
+        return root
     }
 
     companion object {
@@ -55,5 +74,23 @@ class CallenderFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun createCallendar(root:View) {
+        /* starts before 1 month from now */
+        /* starts before 1 month from now */
+        val startDate: Calendar = Calendar.getInstance()
+        startDate.add(Calendar.MONTH, -1)
+
+/* ends after 1 month from now */
+
+/* ends after 1 month from now */
+        val endDate: Calendar = Calendar.getInstance()
+        endDate.add(Calendar.MONTH, 1)
+
+        val horizontalCalendar: HorizontalCalendar =
+            HorizontalCalendar.Builder(rootView, binding.calenderView)
+
+
     }
 }
