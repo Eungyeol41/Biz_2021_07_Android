@@ -1,6 +1,7 @@
 package com.ini.callendar
 
 import android.os.Bundle
+import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -26,13 +27,27 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-
+                // R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
             )
         )
-        actionBar?.setLogo(R.drawable.logo_3)
-        actionBar?.setDisplayUseLogoEnabled(true)
-        actionBar?.setDisplayShowHomeEnabled(true)
-//         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        if(actionBar != null) {
+            actionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+
+//        actionBar?.setLogo(R.drawable.logo_3)
+//        actionBar?.setDisplayUseLogoEnabled(true)
+//        actionBar?.setDisplayShowHomeEnabled(true)
+        // setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val setting_item:Int = item.itemId
+        if(setting_item == R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
