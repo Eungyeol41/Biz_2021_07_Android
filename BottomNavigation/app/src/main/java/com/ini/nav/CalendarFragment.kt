@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import devs.mulham.horizontalcalendar.HorizontalCalendar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +36,7 @@ class CalendarFragment : Fragment() {
         // Inflate the layout for this fragment
 
         val root = inflater.inflate(R.layout.fragment_calendar, container, false)
-        val horizontalCalendar = HorizontalCalendar.Builder(root, R.id.calendarViw)
+//        val horizontalCalendar = HorizontalCalendar.Builder(root, R.id.calendarViw)
         return root
 
     }

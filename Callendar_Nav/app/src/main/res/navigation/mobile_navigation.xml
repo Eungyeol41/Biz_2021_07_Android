@@ -15,11 +15,17 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.ini.callendar.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard"/>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.ini.callendar.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="com.ini.callendar.CalendarFragment"
+        android:label="캘린더"
+        tools:layout="@layout/fragment_calendar" />
 </navigation>

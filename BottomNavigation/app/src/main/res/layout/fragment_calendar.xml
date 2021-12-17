@@ -5,12 +5,5 @@
         android:layout_height="match_parent"
         tools:context=".CalendarFragment">
 
-            <devs.mulham.horizontalcalendar.HorizontalCalendarView
-                android:id="@+id/calendarViw"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </devs.mulham.horizontalcalendar.HorizontalCalendarView>
-
 
     </FrameLayout>

@@ -1,9 +1,13 @@
 package com.ini.callendar
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
+
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -20,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
@@ -32,14 +38,22 @@ class MainActivity : AppCompatActivity() {
         )
 
         if(actionBar != null) {
+            actionBar?.setLogo(R.drawable.logo_3)
             actionBar?.setDisplayHomeAsUpEnabled(true)
+            actionBar?.setDisplayUseLogoEnabled(true)
+            actionBar?.setDisplayShowHomeEnabled(true)
         }
 
 //        actionBar?.setLogo(R.drawable.logo_3)
-//        actionBar?.setDisplayUseLogoEnabled(true)
-//        actionBar?.setDisplayShowHomeEnabled(true)
+
         // setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.top_nav_menu, menu)
+
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
