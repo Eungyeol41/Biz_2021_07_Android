@@ -5,5 +5,5 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="calendar_year_month_format">이거.. 뭐야...?</string>
+    <string name="calendar_year_month_format">Y년 M월 D일</string>
 </resources>

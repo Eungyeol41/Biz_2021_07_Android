@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/bizworks/AndProject/Calendar_Nav/app/src/main/res/layout/fragment_calendar.xml" value="0.1" />
+        <entry key="..\:/bizworks/AndProject/Calendar_Nav/app/src/main/res/layout/list_item_calendar.xml" value="0.17617753623188406" />
         <entry key="..\:/bizworks/AndProject/Callendar_Nav/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.21203703703703702" />
         <entry key="..\:/bizworks/AndProject/Callendar_Nav/app/src/main/res/drawable/logo_3.xml" value="0.38" />
         <entry key="..\:/bizworks/AndProject/Callendar_Nav/app/src/main/res/layout/activity_main.xml" value="0.15" />
