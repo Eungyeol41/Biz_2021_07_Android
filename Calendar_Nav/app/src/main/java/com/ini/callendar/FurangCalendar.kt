@@ -35,6 +35,7 @@ class FurangCalendar(date: LocalDate) {
         dateList.clear()
 
 //        calendar.set(Calendar.DATE, 1)
+        // getActualMaximum: 해당 월의 마지막 날짜 구하기
 //        currentMaxDate = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
 //        prevTail = calendar.get(Calendar.DAY_OF_WEEK) - 1
 //        makePrevTail(calendar.clone() as Calendar)

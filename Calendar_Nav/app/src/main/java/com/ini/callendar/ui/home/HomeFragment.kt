@@ -25,20 +25,16 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
             val spokenText: String? =
                 result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).let { results ->
                     results?.get(0)
                 }
             Log.d("TTS", spokenText.toString())
-
-
-
         }
     }
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
