@@ -51,22 +51,27 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var week_day: Array<String> = resources.getStringArray(R.array.calendar_day)
-        var week_day_en: Array<String> = resources.getStringArray(R.array.calendar_day_EN)
+//        var week_day_en: Array<String> = resources.getStringArray(R.array.calendar_day_EN)
 
         calendarAdapter = CalendarAdapter(cList)
         cList.apply {
             val dateFormat = DateTimeFormatter.ofPattern("dd").withLocale(Locale.forLanguageTag("ko"))
+            val monthFormat = DateTimeFormatter.ofPattern("yyyy년 MM월").withLocale(Locale.forLanguageTag("ko"))
 
-//            var preSunday: LocalDateTime = LocalDateTime.now().with(TemporalAdjusters.previous(DayOfWeek.SUNDAY))
-            val preSunday: String = LocalDateTime.now().with(TemporalAdjusters.previous(DayOfWeek.SUNDAY)).format(dateFormat)
-//            preSunday = "26"
+            val localDate = LocalDateTime.now().format(monthFormat)
+            binding.weekTextview.text = localDate
+
+            val nowDate = LocalDateTime.now().format(dateFormat)
+
+            var preSunday: LocalDateTime = LocalDateTime.now().with(TemporalAdjusters.previous(DayOfWeek.SUNDAY))
 
             for (i in 0..6) {
                 Log.d("오늘은 몇요일..?", week_day[i])
 
-//                Log.d("plusDays", preSunday.plusDays(i.toLong()).format(dateFormat))
-//                add(Calendar(preSunday.plusDays(i.toLong()).format(dateFormat), week_day[i]))
-                Log.d("plus", preSunday.toInt().plus(i.toLong()).toString())
+                cList.apply {
+                    add(Calendar(preSunday.plusDays(i.toLong()).format(dateFormat), week_day[i]))
+                }
+                Log.d("날짜 기준", preSunday.plusDays(i.toLong()).format(dateFormat))
             }
 
         }
